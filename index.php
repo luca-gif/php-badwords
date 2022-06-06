@@ -1,13 +1,23 @@
 <?php
 
+#Preparo il testo originale
+
 $text = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni iusto, earum perferendis consequatur ullam nam consectetur necessitatibus ad. Cumque, consectetur voluptate similique.";
+
+#Controllo che l'Array non sia vuoto
 
 if (!empty($_GET)) {
 
+  #Assegno alla variabile il valore della query string
+
   $censuredWord = $_GET['censured'];
-}
+};
+
+#Creo contatore per le parole censurate
 
 $parolecensurate = 0;
+
+#Rimpiazzo le badwords con gli asterischi
 
 $censuredText = str_ireplace($censuredWord, '***', $text, $parolecensurate);
 
@@ -25,6 +35,7 @@ $censuredText = str_ireplace($censuredWord, '***', $text, $parolecensurate);
 </head>
 
 <body>
+
 
   <h1><?php echo $text ?></h1>
   <h1><?php echo strlen($text) ?></h1>
