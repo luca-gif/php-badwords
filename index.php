@@ -1,9 +1,15 @@
 <?php
 
-$text = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni iusto, earum perferendis consequatur ullam nam necessitatibus ad. Cumque, voluptate similique.";
+$text = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni iusto, earum perferendis consequatur ullam nam consectetur necessitatibus ad. Cumque, voluptate similique.";
 
 var_dump($_GET);
-$censured = $_GET['censured'];
+
+
+
+if (!empty($_GET)) {
+
+  $censured = $_GET['censured'];
+}
 
 $censuredText = str_ireplace($censured, '***', $text);
 
