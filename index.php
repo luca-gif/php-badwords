@@ -1,18 +1,15 @@
 <?php
 
-$text = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni iusto, earum perferendis consequatur ullam nam consectetur necessitatibus ad. Cumque, voluptate similique.";
-
-var_dump($_GET);
-
-
+$text = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni iusto, earum perferendis consequatur ullam nam consectetur necessitatibus ad. Cumque, consectetur voluptate similique.";
 
 if (!empty($_GET)) {
 
-  $censured = $_GET['censured'];
+  $censuredWord = $_GET['censured'];
 }
 
-$censuredText = str_ireplace($censured, '***', $text);
+$parolecensurate = 0;
 
+$censuredText = str_ireplace($censuredWord, '***', $text, $parolecensurate);
 
 ?>
 
@@ -34,6 +31,7 @@ $censuredText = str_ireplace($censured, '***', $text);
 
   <h1><?php echo $censuredText ?></h1>
   <h1><?php echo strlen($censuredText) ?></h1>
+  <h1>Parole censurate: <?php echo $parolecensurate ?></h1>
 
 
 </body>
