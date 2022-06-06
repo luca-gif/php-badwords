@@ -1,8 +1,11 @@
 <?php
+
+$text = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni iusto, earum perferendis consequatur ullam nam necessitatibus ad. Cumque, voluptate similique.";
+
 var_dump($_GET);
 $censured = $_GET['censured'];
 
-$text = "Lorem ipsum dolor sit amet $censured adipisicing elit. Magni iusto, earum perferendis $censured ullam nam necessitatibus ad. Cumque, voluptate similique.";
+$censuredText = str_ireplace($censured, '***', $text);
 
 
 ?>
@@ -23,7 +26,8 @@ $text = "Lorem ipsum dolor sit amet $censured adipisicing elit. Magni iusto, ear
   <h1><?php echo $text ?></h1>
   <h1><?php echo strlen($text) ?></h1>
 
-  <h1><?php  ?></h1>
+  <h1><?php echo $censuredText ?></h1>
+  <h1><?php echo strlen($censuredText) ?></h1>
 
 
 </body>
